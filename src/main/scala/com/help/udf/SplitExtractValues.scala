@@ -6,7 +6,7 @@ import util.control.Breaks._
 /** Validate IBAN (Whitespace removed). If valid, no execption is thrown in IbanUtil and true is returned
   * If Invalid, an exception is thrown and false is returned.  If null, false is also returned.
   */
-class SplitExtractValues extends UDF1[String, Array[Int]] {
+class SplitExtractValues extends UDF1[String, Array[String]] {
 
   def find_index(list: List[Int], k:Int): Int ={
     var foundIndex = -1
@@ -23,7 +23,7 @@ class SplitExtractValues extends UDF1[String, Array[Int]] {
   }
 
 
-  override def call(givenString: String): Array[Int] = {
+  override def call(givenString: String): Array[String] = {
 
     val regexInteger = "\\d+".r
 
@@ -66,7 +66,7 @@ class SplitExtractValues extends UDF1[String, Array[Int]] {
 
     //println("final num match list = ", num_match_list)
 
-    num_match_list.toArray
+    num_match_list.map(ele => "DK" + ele).toArray
 
   }
 }
