@@ -1,9 +1,9 @@
 package com.help.stackoverflow
 
 
-import com.help.udf.{AddPrefixUDF, SplitExtractValues}
+import com.help.udf.{AddPrefixUDF, EvaluateExpression, SplitExtractValues}
 
-import java.util.{Arrays}
+import java.util.Arrays
 import scala.collection.mutable.{ArrayBuffer, ListBuffer, Map}
 
 object CheckUDFs {
@@ -35,5 +35,14 @@ object CheckUDFs {
       val result = extractValuesUdf.call(input)
       println(input +  " results = " +  result.toSeq)
     }
+
+
+    val udfExpEval = new EvaluateExpression
+    val result = udfExpEval.call(2.12, 3.23, "x+y")
+    println(result)
+
+
+
+
   }
 }

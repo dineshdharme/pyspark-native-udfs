@@ -117,14 +117,10 @@ spark-warehouse/
 __pycache__
 
 
-## Omni specific config files
 .config.yaml
 .config_prod.yaml
 
-copy_startup_script
-ssh_pkill_command
-ssh_count_processes
-scp_LOGS_UPLOADER_scripts
+
 my_env
 venv_yorkville
 ##sbt config file
