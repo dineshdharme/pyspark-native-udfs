@@ -1,7 +1,7 @@
 package com.help.stackoverflow
 
 
-import com.help.udf.{AddPrefixUDF, EvaluateExpression, SplitExtractValues}
+import com.help.udf.{AddPrefixUDF, EvaluateExpression, SplitExtractValues, CountZeros}
 
 import java.util.Arrays
 import scala.collection.mutable.{ArrayBuffer, ListBuffer, Map}
@@ -41,7 +41,12 @@ object CheckUDFs {
     val result = udfExpEval.call(2.12, 3.23, "x+y")
     println(result)
 
-
+    val array1 = Array[Int](1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0)
+    val array2 = Array[Int](0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 2, 0, 0, 0, 0)
+    val array3 = Array[Int](0,0,0,2,1,0,2,1,0)
+    val udfCountZeros = new CountZeros
+    val countZeros = udfCountZeros.call(array1)
+    println(countZeros)
 
 
   }

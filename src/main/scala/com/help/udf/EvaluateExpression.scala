@@ -5,9 +5,7 @@ import scala.reflect.runtime.currentMirror
 import scala.tools.reflect.ToolBox
 import scala.util.control.Breaks._
 
-/** Validate IBAN (Whitespace removed). If valid, no execption is thrown in IbanUtil and true is returned
-  * If Invalid, an exception is thrown and false is returned.  If null, false is also returned.
-  */
+
 class EvaluateExpression extends UDF3[Double, Double, String, Double] {
 
   override def call(x_value:Double, y_value:Double,  given_expression: String): Double = {

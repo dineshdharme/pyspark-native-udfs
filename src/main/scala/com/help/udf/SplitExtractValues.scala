@@ -3,9 +3,7 @@ package com.help.udf
 import org.apache.spark.sql.api.java.UDF1
 import util.control.Breaks._
 
-/** Validate IBAN (Whitespace removed). If valid, no execption is thrown in IbanUtil and true is returned
-  * If Invalid, an exception is thrown and false is returned.  If null, false is also returned.
-  */
+
 class SplitExtractValues extends UDF1[String, Array[String]] {
 
   def find_index(list: List[Int], k:Int): Int ={
