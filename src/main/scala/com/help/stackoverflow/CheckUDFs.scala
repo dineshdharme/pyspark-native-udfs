@@ -1,7 +1,7 @@
 package com.help.stackoverflow
 
 
-import com.help.udf.{AddPrefixUDF, EvaluateExpression, SplitExtractValues, CountZeros}
+import com.help.udf.{AddPrefixUDF, EvaluateExpression, EvaluateBooleanExpression, SplitExtractValues, CountZeros}
 
 import java.util.Arrays
 import scala.collection.mutable.{ArrayBuffer, ListBuffer, Map}
@@ -47,6 +47,12 @@ object CheckUDFs {
     val udfCountZeros = new CountZeros
     val countZeros = udfCountZeros.call(array1)
     println(countZeros)
+
+
+    val udfBoolExpEval = new EvaluateBooleanExpression
+    val resultBool = udfBoolExpEval.call(0, 1, 0, "A|B|C")
+    println("here's the bool result", resultBool)
+
 
 
   }
